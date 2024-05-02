@@ -46,15 +46,7 @@ export default function Navbar() {
   return (
     <header className="flex h-20 border-b shadow-sm transition-all">
       <Logo />
-
-      <div
-        className={cn(
-          'fixed top-0 z-10 flex w-full items-center justify-center p-4 backdrop-blur-lg transition-all',
-        )}
-      >
-        <Menu />
-      </div>
-
+      <Menu />
       <Settings />
     </header>
   );

@@ -5,69 +5,58 @@ import { usePathname } from 'next/navigation';
 
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { FadeInWhenVisible } from '@/components/layout/fade-in-when-visible';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 
-const routes = [
-  {
-    id: 0,
-    href: '/',
-    label: 'Inicial',
-  },
-  {
-    id: 2,
-    href: '/blog',
-    label: 'Blog',
-  },
-];
+import { cn } from '@/lib/utils';
+import { i18n } from '@/lib/dictionary';
+import { useI18n } from '@/hooks/use-i18n';
 
 const Menu = () => {
   const path = usePathname();
+  const {
+    state: { currentLanguage },
+  } = useI18n();
+
+  const routes = [
+    {
+      id: 0,
+      href: '/',
+      label: i18n.general.menu.home[currentLanguage],
+    },
+    {
+      id: 2,
+      href: '/blog',
+      label: i18n.general.menu.blog[currentLanguage],
+    },
+  ];
 
   return (
-    <FadeInWhenVisible direction="down">
-      <Tabs defaultValue={path}>
-        <TabsList className="w-full">
-          {routes.map((item) => (
-            <MenuItem key={item.id} item={item} />
-          ))}
-        </TabsList>
-      </Tabs>
-    </FadeInWhenVisible>
+    <div
+      className={cn(
+        'fixed top-0 z-10 flex w-full items-center justify-center p-4 backdrop-blur-lg transition-all',
+      )}
+    >
+      <FadeInWhenVisible direction="down">
+        <Tabs defaultValue={path}>
+          <TabsList className="w-full">
+            {routes.map((item) => (
+              <MenuItem key={item.id} item={item} />
+            ))}
+          </TabsList>
+        </Tabs>
+      </FadeInWhenVisible>
+    </div>
   );
 };
 
 interface MenuItemProps {
-  item: { id: number; href: string; label: string; sub?: any[] };
+  item: { id: number; href: string; label: string; sub?: never[] };
 }
 
 const MenuItem = ({ item }: MenuItemProps) => {
-  if (!item.sub) {
-    return (
-      <Link href={item.href}>
-        <TabsTrigger value={item.href}>{item.label}</TabsTrigger>
-      </Link>
-    );
-  }
-
   return (
-    <>
-      <Popover>
-        <PopoverTrigger asChild>
-          <TabsTrigger value={item.href}>{item.label}</TabsTrigger>
-        </PopoverTrigger>
-        <PopoverContent>
-          {item.sub.map((si) => (
-            <Tabs key={si.id} defaultValue={''}>
-              <TabsList className="w-full">
-                <Link href={item.href}>
-                  <TabsTrigger value={item.href}>{item.label}</TabsTrigger>
-                </Link>
-              </TabsList>
-            </Tabs>
-          ))}
-        </PopoverContent>
-      </Popover>
-    </>
+    <Link href={item.href}>
+      <TabsTrigger value={item.href}>{item.label}</TabsTrigger>
+    </Link>
   );
 };
 
