@@ -14,11 +14,21 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
+enum RESCUED_STATUS {
+  PERDIDO
+  ENCONTRADO
+}
+
 model Rescued {
   id          String  @id @default(cuid())
   name        String
   description String?
   photo_url   String?
+
+  shelterId String?
+  shelter   Shelter? @relation(fields: [shelterId], references: [id])
+
+  status RESCUED_STATUS @default(PERDIDO)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -30,6 +40,8 @@ model Shelter {
   description String?
   address     String?
   address_url String?
+
+  rescues Rescued[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

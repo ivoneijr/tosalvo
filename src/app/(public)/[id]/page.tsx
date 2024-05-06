@@ -1,3 +1,6 @@
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+
 interface RescuedDetailsProps {
   params: {
     id: string;
@@ -5,5 +8,7 @@ interface RescuedDetailsProps {
 }
 
 export default function RescuedDetails({ params: { id } }: RescuedDetailsProps) {
-  return <>RescuedDetails {id}</>;
+  console.log(id);
+
+  return <div className="p-12">detalhes</div>;
 }
