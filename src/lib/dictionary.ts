@@ -2,12 +2,12 @@ export const i18n = {
   general: {
     menu: {
       home: {
-        ['pt-br']: 'Inicial',
-        ['en-us']: 'Home',
+        ['pt-br']: 'Pessoas',
+        ['en-us']: 'People',
       },
-      blog: {
-        ['pt-br']: 'Blog',
-        ['en-us']: 'Blog',
+      pets: {
+        ['pt-br']: 'Pets',
+        ['en-us']: 'Pets',
       },
     },
     modals: {
@@ -23,8 +23,8 @@ export const i18n = {
               ['en-us']: 'Theme',
             },
             description: {
-              ['pt-br']: 'Customize como o a página da prestative parece no seu dispositivo.',
-              ['en-us']: 'Customise how Prestativ website looks like on your device.',
+              ['pt-br']: 'Customize como o a página da @Tosalvo parece no seu dispositivo.',
+              ['en-us']: 'Customise how @Tosalvo website looks like on your device.',
             },
             content: {
               span: {
@@ -60,7 +60,7 @@ export const i18n = {
                 ['en-us']: 'Change language',
               },
               pt: {
-                ['pt-br']: 'Portugues (Brasil)',
+                ['pt-br']: 'Português (Brasil)',
                 ['en-us']: 'Portuguese (Brazil)',
               },
               en: {

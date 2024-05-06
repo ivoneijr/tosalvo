@@ -24,8 +24,8 @@ const Menu = () => {
     },
     {
       id: 2,
-      href: '/blog',
-      label: i18n.general.menu.blog[currentLanguage],
+      href: '/pets',
+      label: i18n.general.menu.pets[currentLanguage],
     },
   ];
 

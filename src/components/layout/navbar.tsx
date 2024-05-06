@@ -34,9 +34,19 @@ const Settings = () => {
           <Icon
             name="settings"
             onClick={settings.onOpen}
-            className={cn('text-muted-foreground ml-2 mr-2 h-[18px] w-[18px] shrink-0')}
+            className={cn('ml-2 mr-2 h-[18px] w-[18px] shrink-0 text-muted-foreground')}
           />
         </Button>
+      </FadeInWhenVisible>
+    </div>
+  );
+};
+
+const Contact = () => {
+  return (
+    <div className="fixed right-24 top-4 z-50 flex items-center gap-x-2 ">
+      <FadeInWhenVisible direction="left">
+        <Button className="bg-orange-500 text-xl">Contato</Button>
       </FadeInWhenVisible>
     </div>
   );
@@ -45,7 +55,6 @@ const Settings = () => {
 export default function Navbar() {
   return (
     <header className="flex h-20 border-b shadow-sm transition-all">
-      <Logo />
       <Menu />
       <Settings />
     </header>
