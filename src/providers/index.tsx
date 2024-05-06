@@ -13,7 +13,7 @@ const PublicProvider = ({ children }: PropsWithChildren) => {
       defaultTheme="system"
       enableSystem
       disableTransitionOnChange
-      storageKey="prestativ-theme"
+      storageKey="tosalvo-theme"
     >
       <Toaster position="bottom-center" />
       <ModalProvider />

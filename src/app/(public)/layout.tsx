@@ -9,8 +9,8 @@ import Footer from '@/components/layout/footer';
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
-  title: 'Prestativ',
-  description: 'Prestativ',
+  description: '@ToSalvo',
+  title: '@ToSalvo',
 };
 
 export default function RootLayout({
@@ -20,9 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn('bg-background min-h-screen font-sans antialiased', inter.variable)}>
+      <body className={cn('min-h-screen bg-background font-sans antialiased', inter.variable)}>
         <PublicProvider>
-          <div className="bg-background relative flex min-h-screen flex-col">
+          <div className="relative flex min-h-screen flex-col bg-background">
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />
