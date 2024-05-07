@@ -16,7 +16,7 @@ export default async function Home(props: Props) {
       subtitle="Aqui voce vai encontrar a lista de pessoas resgatadas junto com o local e telefone para contato."
     >
       <Filtering />
-      {success && <Table items={success ?? []} />}
+      {success && <Table items={success} />}
     </PageLayout>
   );
 }

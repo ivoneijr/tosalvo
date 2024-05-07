@@ -1,6 +1,5 @@
 'use client';
 
-import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import * as React from 'react';
 
@@ -42,19 +41,19 @@ export function ModeToggle() {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="bg-secondary">
           <DropdownMenuItem
-            className="hover:bg-muted-foreground cursor-pointer"
+            className="cursor-pointer hover:bg-muted-foreground"
             onClick={() => setTheme('light')}
           >
             {i18n.general.modals.settings.items.theme.content.light[currentLanguage]}
           </DropdownMenuItem>
           <DropdownMenuItem
-            className="hover:bg-muted-foreground cursor-pointer"
+            className="cursor-pointer hover:bg-muted-foreground"
             onClick={() => setTheme('dark')}
           >
             {i18n.general.modals.settings.items.theme.content.dark[currentLanguage]}
           </DropdownMenuItem>
           <DropdownMenuItem
-            className="hover:bg-muted-foreground cursor-pointer"
+            className="cursor-pointer hover:bg-muted-foreground"
             onClick={() => setTheme('system')}
           >
             {i18n.general.modals.settings.items.theme.content.system[currentLanguage]}

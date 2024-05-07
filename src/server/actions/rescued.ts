@@ -4,7 +4,7 @@ import { DB } from '@/lib/db';
 import { redirect } from 'next/navigation';
 
 import { Rescued, Shelter } from '@prisma/client';
-export type RescuedWithShelter = Rescued & { shelter?: Shelter };
+export type RescuedWithShelter = Rescued & { shelter?: Shelter | null };
 
 export interface GetRescuedListOptions {
   q: string | null;
