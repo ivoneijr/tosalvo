@@ -1,6 +1,7 @@
 'use client';
 
 import { FadeInWhenVisible } from '@/components/layout/fade-in-when-visible';
+
 import { cn } from '@/lib/utils';
 import { useSettings } from '@/hooks/use-settings';
 import { Button } from '@/components/ui/button';
@@ -25,11 +26,22 @@ const Settings = () => {
   );
 };
 
+// const Contact = () => {
+//   return (
+//     <div className="fixed right-24 top-4 z-50 flex animate-bounce items-center gap-x-2">
+//       <FadeInWhenVisible direction="left">
+//         <Button className="text-xl">SALVEI ALGUÉM</Button>
+//       </FadeInWhenVisible>
+//     </div>
+//   );
+// };
+
 export default function Navbar() {
   return (
     <header className="flex h-20 border-b shadow-sm transition-all">
       <Menu />
       <Settings />
+      {/*<Contact />*/}
     </header>
   );
 }

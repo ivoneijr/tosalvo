@@ -13,6 +13,7 @@ export const NewMissingPersonModal = () => {
           <h2 className="text-lg font-medium">Informar Desaparecido</h2>
         </DialogHeader>
         {/*TODO: ADD CONTENT*/}
+        Em breve...
       </DialogContent>
     </Dialog>
   );
