@@ -31,6 +31,7 @@ export default function Table({
               <TableHead>Abrigo</TableHead>
               <TableHead>Contato</TableHead>
               <TableHead className="w-[100px]">Situação</TableHead>
+              <TableHead>Detalhes</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -68,6 +69,7 @@ export default function Table({
                 <TableCell>{person?.shelter?.name ?? '---'}</TableCell>
                 <TableCell>{person?.contact}</TableCell>
                 <TableCell className="text-right">{person?.status ?? 'Sem status'}</TableCell>
+                <TableCell>{person?.description}</TableCell>
               </TableRow>
             ))}
           </TableBody>
