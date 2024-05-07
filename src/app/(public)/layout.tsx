@@ -27,9 +27,9 @@ export default function RootLayout({
         <Analytics />
         <PublicProvider>
           <div className="relative flex min-h-screen flex-col bg-background">
-            <Navbar />
+            {/*<Navbar />*/}
             <main className="flex-1">{children}</main>
-            <Footer />
+            {/*<Footer />*/}
           </div>
         </PublicProvider>
       </body>
