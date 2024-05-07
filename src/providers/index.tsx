@@ -1,12 +1,11 @@
-'use client';
-
 import { PropsWithChildren } from 'react';
 import { Toaster } from 'sonner';
 
 import { ThemeProvider } from './theme-provider';
 import { ModalProvider } from '@/providers/modal-provider';
+import ReactQueryProvider from '@/providers/react-query';
 
-const PublicProvider = ({ children }: PropsWithChildren) => {
+async function PublicProvider({ children }: PropsWithChildren) {
   return (
     <ThemeProvider
       attribute="class"
@@ -15,11 +14,13 @@ const PublicProvider = ({ children }: PropsWithChildren) => {
       disableTransitionOnChange
       storageKey="tosalvo-theme"
     >
-      <Toaster position="bottom-center" />
-      <ModalProvider />
-      {children}
+      <ReactQueryProvider>
+        <Toaster position="bottom-center" />
+        <ModalProvider />
+        {children}
+      </ReactQueryProvider>
     </ThemeProvider>
   );
-};
+}
 
 export default PublicProvider;

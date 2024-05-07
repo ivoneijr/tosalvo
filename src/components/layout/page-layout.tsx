@@ -5,7 +5,7 @@ interface Props {
   subtitle: string;
 }
 
-export default async function PageLayout({ children, title, subtitle }: PropsWithChildren<Props>) {
+export default function PageLayout({ children, title, subtitle }: PropsWithChildren<Props>) {
   return (
     <div className="p-12">
       <div className="mb-12">

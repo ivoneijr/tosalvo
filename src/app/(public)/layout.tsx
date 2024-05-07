@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: '@ToSalvo',
 };
 
+// TODO: refactor to use propsWithChildren
 export default function RootLayout({
   children,
 }: Readonly<{
