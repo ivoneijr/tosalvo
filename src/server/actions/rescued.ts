@@ -1,13 +1,24 @@
 'use server';
 
 import { DB } from '@/lib/db';
+import { redirect } from 'next/navigation';
 
-// import { Rescued, Shelter } from '@prisma/client';
-// type RescuedWithShelter = Rescued & { shelter?: Shelter };
+import { Rescued, Shelter } from '@prisma/client';
+export type RescuedWithShelter = Rescued & { shelter?: Shelter };
 
-export const getRescuedList = async () => {
+export interface GetRescuedListOptions {
+  q: string | null;
+}
+
+export const getRescuedList = async (options: GetRescuedListOptions) => {
   try {
     const data = await DB.rescued.findMany({
+      where: {
+        name: {
+          contains: options.q ?? '',
+          mode: 'insensitive',
+        },
+      },
       include: {
         shelter: true,
       },
@@ -15,6 +26,18 @@ export const getRescuedList = async () => {
 
     return { success: data };
   } catch (e) {
-    return { error: 'Could not fetch rescued' };
+    return { error: 'Não encontrado.' };
   }
+};
+
+export const updateFiltering = async (formData: FormData) => {
+  const name = formData.get('name');
+
+  if (!name) {
+    redirect('/');
+  }
+
+  const params = new URLSearchParams([['name', `${name}`]]);
+
+  redirect(`/?${params}`);
 };
