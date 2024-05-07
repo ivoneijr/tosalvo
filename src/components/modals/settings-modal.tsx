@@ -1,12 +1,14 @@
 'use client';
 
-import { ModeToggle } from '@/components/mode-toggle';
+import { i18n } from '@/lib/dictionary';
+
 import { Dialog, DialogContent, DialogHeader } from '@/components/ui/dialog';
 import { Label } from '@/components/ui/label';
+import { I18nToggle } from '@/components/i18n-toggle';
+import { ModeToggle } from '@/components/mode-toggle';
+
 import { useSettings } from '@/hooks/use-settings';
 import { useI18n } from '@/hooks/use-i18n';
-import { i18n } from '@/lib/dictionary';
-import { I18nToggle } from '@/components/i18n-toggle';
 
 export const SettingsModal = () => {
   const settings = useSettings();
@@ -26,7 +28,7 @@ export const SettingsModal = () => {
         <div className="flex items-center justify-between">
           <div className="flex flex-col gap-y-1">
             <Label>{i18n.general.modals.settings.items.theme.label[currentLanguage]}</Label>
-            <span className="text-muted-foreground text-[0.8rem]">
+            <span className="text-[0.8rem] text-muted-foreground">
               {i18n.general.modals.settings.items.theme.description[currentLanguage]}
             </span>
           </div>
@@ -36,7 +38,7 @@ export const SettingsModal = () => {
         <div className="flex items-center justify-between">
           <div className="flex flex-col gap-y-1">
             <Label>{i18n.general.modals.settings.items.language.label[currentLanguage]}</Label>
-            <span className="text-muted-foreground text-[0.8rem]">
+            <span className="text-[0.8rem] text-muted-foreground">
               {i18n.general.modals.settings.items.language.description[currentLanguage]}
             </span>
           </div>
