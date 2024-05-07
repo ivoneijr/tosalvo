@@ -31,6 +31,7 @@ export default function Footer() {
           variant="secondary"
           className="h-full w-full rounded-none text-3xl"
           onClick={shelterModal.onOpen}
+          disabled
         >
           Novo Abrigo
         </Button>
