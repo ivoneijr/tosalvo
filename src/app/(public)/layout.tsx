@@ -5,8 +5,8 @@ import { Inter } from 'next/font/google';
 import '../globals.css';
 import { cn } from '@/lib/utils';
 import PublicProvider from '@/providers';
-import Navbar from '@/components/layout/navbar';
-import Footer from '@/components/layout/footer';
+// import Navbar from '@/components/layout/navbar';
+// import Footer from '@/components/layout/footer';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
