@@ -41,3 +41,26 @@ export const updateFiltering = async (formData: FormData) => {
 
   redirect(`/?${params}`);
 };
+
+export const createRescued = async (formData: FormData) => {
+  const name = formData.get('name') as string;
+  const contact = formData.get('contact') as string;
+  const description = formData.get('description') as string;
+
+  try {
+    const newRescued = await DB.rescued.create({
+      data: {
+        name,
+        contact,
+        description,
+      },
+    });
+
+    if (newRescued) {
+      redirect('/');
+    }
+  } catch (e) {
+    console.error('createRescued: ', e);
+    return;
+  }
+};

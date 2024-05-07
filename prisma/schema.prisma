@@ -34,7 +34,7 @@ model Rescued {
   shelterId String?
   shelter   Shelter? @relation(fields: [shelterId], references: [id])
 
-  status RESCUED_STATUS @default(PERDIDO)
+  status RESCUED_STATUS @default(ENCONTRADO)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
