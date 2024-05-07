@@ -27,6 +27,11 @@ const Menu = () => {
       href: '/pets',
       label: i18n.general.menu.pets[currentLanguage],
     },
+    {
+      id: 2,
+      href: '/abrigos',
+      label: i18n.general.menu.shelters[currentLanguage],
+    },
   ];
 
   return (

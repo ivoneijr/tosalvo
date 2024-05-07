@@ -9,6 +9,10 @@ export const i18n = {
         ['pt-br']: 'Pets',
         ['en-us']: 'Pets',
       },
+      shelters: {
+        ['pt-br']: 'Abrigos',
+        ['en-us']: 'Shelters',
+      },
     },
     modals: {
       settings: {

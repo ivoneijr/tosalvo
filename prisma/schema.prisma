@@ -29,6 +29,7 @@ model Rescued {
   name        String
   description String?
   photo_url   String?
+  contact     String?
 
   shelterId String?
   shelter   Shelter? @relation(fields: [shelterId], references: [id])
