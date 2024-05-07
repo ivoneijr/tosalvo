@@ -16,7 +16,7 @@ export const NewMissingPersonModal = () => {
     <Dialog open={modal.isOpen} onOpenChange={modal.onClose}>
       <DialogContent className="">
         <DialogHeader className="border-b pb-3">
-          <h2 className="text-lg font-medium">Informar Desaparecido</h2>
+          <h2 className="text-lg font-medium">Dados da pessoa resgatada</h2>
         </DialogHeader>
 
         <form
