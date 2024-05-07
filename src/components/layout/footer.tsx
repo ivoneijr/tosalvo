@@ -4,6 +4,7 @@
 // import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { useNewMissingPersonModal } from '@/hooks/use-new-missing-person-modal';
+import { useNewShelterModal } from '@/hooks/use-new-shelter-modal';
 
 // export default function Footer() {
 //   return (
@@ -20,12 +21,21 @@ import { useNewMissingPersonModal } from '@/hooks/use-new-missing-person-modal';
 // }
 
 export default function Footer() {
-  const modal = useNewMissingPersonModal();
+  const missingPersonModal = useNewMissingPersonModal();
+  const shelterModal = useNewShelterModal();
+
   return (
     <footer className="h-24">
-      <div className="h-full w-full border-t text-center shadow-sm ">
-        <Button className="h-full w-full rounded-none text-3xl" onClick={modal.onOpen}>
-          SALVEI ALGUÉM
+      <div className="flex h-full w-full justify-between gap-2 border-t px-2 pb-2 text-center shadow-sm">
+        <Button
+          variant="secondary"
+          className="h-full w-full rounded-none text-3xl"
+          onClick={shelterModal.onOpen}
+        >
+          Novo Abrigo
+        </Button>
+        <Button className="h-full w-full rounded-none text-3xl" onClick={missingPersonModal.onOpen}>
+          Novo Resgate
         </Button>
       </div>
     </footer>

@@ -1,8 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# To Salvo
+Este Repositório publico do site [https://tosalvo.org](https://tosalvo.org), uma iniciativa para ajudar as vitimas da tragédia da inundação do Rio Grande do Sul de maio de 2024.
 
-## Getting Started
+## Para rodar
 
-First, run the development server:
 
 ```bash
 npm run dev
@@ -14,11 +14,12 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## TODO LIST
-- [ ] Incluir salvo/desaparecido
+- [ ] (urgente) Incluir pessoa salva
+- [ ] (urgente) Paginação 
+- [ ] Pagina de detalhes de pessoa salva
+- [ ] "---------------------------------------------------"
 - [ ] Incluir procurado se resultado vazio
-- [ ] Pagina de detalhes de um salvo
 - [ ] Incluir novo Abrigo
-- [ ] Incluir novo Abrigo
+- [ ] Pagina de detalhes do abrigo 

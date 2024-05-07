@@ -26,9 +26,10 @@ export default function Table({
         <UiTable>
           <TableHeader>
             <TableRow>
-              <TableHead>Foto</TableHead>
+              <TableHead className="w-[100px]">Foto</TableHead>
               <TableHead>Nome</TableHead>
               <TableHead>Abrigo</TableHead>
+              <TableHead>Contato</TableHead>
               <TableHead className="w-[100px]">Situação</TableHead>
             </TableRow>
           </TableHeader>
@@ -65,6 +66,7 @@ export default function Table({
                 </TableCell>
                 <TableCell className="font-medium">{person?.name}</TableCell>
                 <TableCell>{person?.shelter?.name ?? '---'}</TableCell>
+                <TableCell>{person?.contact}</TableCell>
                 <TableCell className="text-right">{person?.status ?? 'Sem status'}</TableCell>
               </TableRow>
             ))}
